@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/appcode-icon.png">
+		<title>Net-Coder</title>
+		<style>
+			html,body{
+				margin:0px;
+				-webkit-appearance:none!important;
+			}
+			.big_container{
+				border: 1px solid #000;
+				padding: 10px;
+				border-radius:10px;
+				width:335px;
+				margin: 10px;
+				float: left;
+			}
+			input{
+				width:318px;
+				margin: 5px;
+			}
+			textarea{
+				width:318px;
+				margin:5px;
+				height:83px;
+				resize:none; 
+			}
+			button{
+				margin:5px;
+				padding:5px 10px 5px 10px;
+				border:1px solid #000;
+				border-radius:5px;
+				background:#FFF;
+			}
+		</style>
+	</head>
+	<body>
+		<h2 style="margin:10px;">Net String Encryptor Online</h2>
+		<div class="big_container">
+			<b>Encode:</b><br>
+			<form action="./" method="GET">
+				<input type="hidden" name="ctype" value="encode"/><br>
+				<input type="text" autocomplete="off" name="url" placeholder="Url here..."/><br>
+				<input type="text" autocomplete="off" name="text" placeholder="Text here..."/><br>
+				<button type="submit">Go</button>
+			</form>
+		</div>
+		<div class="big_container">
+			<b>Decode:</b><br>
+			<form action="./" method="GET">
+				<input type="hidden" name="ctype" value="decode"/><br>
+				<input type="text" autocomplete="off" name="url" placeholder="Url here..."/><br>
+				<input type="text" autocomplete="off" name="text" placeholder="Text here..."/><br>
+				<button type="submit">Go</button>
+			</form>
+		</div>
+		<div class="big_container">
+			<b>Result:</b><br><br>
+			<textarea autocomplete="off">{{result}}</textarea>
+		</div>
+		<div class="big_container">
+			<b>About:</b>
+			<a href="//github.com/EZ118/Net-String-Encryptor" target="_blank">(GITHUB)</a>
+			<br>
+			<div style="margin:5px;margin-top:13px">
+				<i>该项目如何工作？</i><br>
+				将输入的Url指向网页内容转为字典，与默认字典拼接、
+				去重。再将输入的Text转化为Base64字符串。将其每个
+				字符与字典的字符对应，并写入指针。在转为Base64后即可。
+				<br>
+			</div>
+		</div>
+		<div class="big_container">
+			<b>Open Api:</b><br><br>
+			<textarea autocomplete="off">https://net-code.ez118.repl.co/api/?ctype=encode&url=http://google.com/&text=This_Is_A_Test</textarea>
+		</div>
+	</body>
+</html>

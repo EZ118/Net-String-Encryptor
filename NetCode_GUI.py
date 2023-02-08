@@ -1,8 +1,8 @@
+from tkinter import *
 import requests
 import base64
-from tkinter import *
 import sys
-
+import re
 
 global DefaultDict
 DefaultDict = "asdf1234ghjk5678lqwe90-=rtyu[]\;iopz',./xcvb`~!@nmMN#$%^BVCX&*()ZLKJ_+{}HGFD|:\"<SAQW>?ERTY UIOP"
@@ -27,7 +27,8 @@ def CreateDict():
 
     dic = ""
     codes = requests.get(url).text.replace("\\n","")
-    codes = encode(url) + str(codes) + DefaultDict
+    codes = re.sub('[\u4e00-\u9fa5]','',codes)
+    codes = encode(url) + encode(codes) + DefaultDict
 
     for i in str(codes):
         if i in dic:
